@@ -87,7 +87,7 @@ def get_login_form():
 
 @app.route('/users/<username>')
 def get_user_page(username):
-    if not logged_in:
+    if not logged_in():
         flash(f"You must be logged in to view this page.")
         return redirect('/login')
     else:
